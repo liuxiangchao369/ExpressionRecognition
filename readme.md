@@ -1,9 +1,10 @@
 
-# 数据集下载
+# Dataset Download
 
+You can download the dataset from this link.
 https://paperswithcode.com/dataset/fer2013
 
-# 网络参数量
+# Network Parameters
 
 ```commandline
 Total params: 876,887
@@ -18,13 +19,13 @@ Estimated Total Size (MB): 29.86
 ```
 
 
-# 使用额外数据集
+# Using Additional Datasets
 
-## 训练超参数
+## Training Hyperparameters
 
 
 
-随机种子: 866689041
+Random seed: 866689041
 
 batch_size=64
 
@@ -32,13 +33,13 @@ lr=1e-05
 
 max_epochs=120
 
-学习率衰减 scheduler = StepLR(optimizer, step_size=60, gamma=0.5)  
+Learning rate decay: scheduler = StepLR(optimizer, step_size=60, gamma=0.5)  
 
 
 
 
 
-## 性能指标
+## Performance Metrics
 
 Accuracy: 0.990
 
@@ -56,11 +57,11 @@ Accuracy: 0.990
 
 
 
-# 仅使用FER-2013数据集
+# Using FER-2013 Dataset Only
 
-## 训练超参数
+## Training Hyperparameters
 
-随机种子: 2134640168
+random seed: 2134640168
 
 batch_size=64
 
@@ -68,9 +69,9 @@ lr=1e-5
 
 max_epochs=200
 
-学习率衰减 scheduler = StepLR(optimizer, step_size=50, gamma=0.5)  
+scheduler = StepLR(optimizer, step_size=50, gamma=0.5)  
 
-## 性能指标
+## Performance Metrics
 
 Accuracy: 0.9967957648370019
 
@@ -87,28 +88,29 @@ surprise  |  0.9964      |      0.9976       |      0.9970     |        831
 ![混淆矩阵](Confusion%20Matrix2.jpg)
 
 
-# 快速开始
+# Quick Start
 
 ```commandline
 python3 emotion_det.py --img_path="path to your image"
 ```
 
-# 从头构建
+# From the Beginning
 
-1.训练模型
+1.training the model
 
 ```commandline
 python3 train.py
 tensorboard --logdir log
 ```
 ![loss](loss.jpg)
-2.pytorch模型转为onnx
+
+2.Convert PyTorch model to ONNX
 
 ```commandline
 python3 torch2onnx.py
 ```
 
-3.测试
+3.test
 ```commandline
 python3 test.py
 ```
